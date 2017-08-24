@@ -1,0 +1,9 @@
+# ignore folders
+node_modules
+output
+_docs
+dist
+static/common/lib
+
+# ignore files
+fk-conf.js

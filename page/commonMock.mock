@@ -1,0 +1,4 @@
+module.exports = {
+  staticDomain: '',
+  login: true
+}

@@ -1,0 +1,174 @@
+/// 自动添加浏览器前缀
+/// 
+/// @param {String} $property - css property name
+/// @param {String} $value - css value of property
+///
+/// @example
+///    // scss
+///    @include prefixer(transition, all .2s ease-in-out);
+///    // css
+///    {
+///      -webkit-transition: all .2s ease-in-out;
+///      -moz-transition: all .2s ease-in-out;
+///      -ms-transition: all .2s ease-in-out;
+///      -o-transition: all .2s ease-in-out;
+///      transition: all .2s ease-in-out;
+///   }
+@mixin prefixer($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+/// Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content
+/// 
+/// @example:
+///    @include keyframes(pulse) {
+///        0% {
+///            opacity: 1;   
+///            @include transform(scale(1));
+///        }
+///        50% {
+///            opacity: 0.7;   
+///            @include transform(scale(0.9));
+///        }
+///        100% {
+///            opacity: 1;   
+///            @include transform(scale(1));
+///        }
+///    };
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @-o-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+/// transform
+/// 
+/// @param {String} $property - transform property
+/// 
+/// @example
+///    @include transform(rotate(-4deg) translate(6px, 18px) scale(1));
+@mixin transform($property: none) {
+    @include prefixer(transform, $property);
+}
+
+/// transform-origi
+/// 
+/// @param {String|Number} x-axis - left | center | right  | length | %
+/// @param {String|Number} y-axis - top  | center | bottom | length | %
+/// @param {String|Number} z-axis -                          length
+/// 
+/// @example
+///    @include transform-origin(center bottom 0);
+///    @include transform-origin(505, 50%);
+@mixin transform-origin($axes: 50%) {
+    @include prefixer(transform-origin, $axes);
+}
+
+/// transform-style
+/// 
+/// @example
+///    @include transform-style(flat);
+@mixin transform-style($style: flat) {
+    @include prefixer(transform-style, $style);
+}
+
+/// animation
+/// 
+/// @example:
+///    @include animation(pop_move_1 6s infinite);
+@mixin animation($animations...) {
+    @include prefixer(animation, $animations);
+}
+
+/// animation-delay
+/// 
+/// @example:
+///    @include animation-delay(0.2s);
+@mixin animation-delay ($times...) {
+    @include prefixer(animation-delay, $times);
+}
+
+/// transition
+/// 
+/// @example:
+///    @include transition(all 0.2s ease-in-out, opacity 1s);
+@mixin transition ($properties...) {
+    @include prefixer(transition, $properties);
+}
+
+/// css3 transition 闪屏bug修复
+/// 
+/// @example
+///    @include trans-fix();
+@mixin trans-fix() {
+    @include prefixer(backface-visibility, hidden);
+}
+
+/// boxSizing
+/// 
+/// @example
+///    @include box-sizing(border-box);
+@mixin box-sizing($sizing) {
+    @include prefixer(box-sizing, $sizing);
+}
+
+/// 圆角
+/// 
+/// @example
+///    @include border-radius(5px);
+@mixin border-radius($r...){
+    @include prefixer(border-radius, $r);
+}
+
+/// 颜色渐变
+/// 
+/// @param {String} - {开始颜色，结束颜色}
+/// 
+/// @example
+///    @include linear-gradient(#f8f8f8, #ebebeb);
+@mixin linear-gradient($s:#f8f8f8, $e:#ebebeb){
+    background-color: $s;
+    background-image: -moz-linear-gradient(top, $s, $e);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $s), color-stop(1, $e)); 
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$s}', endColorstr='#{$e}', GradientType='0'); 
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$s}', endColorstr='#{$e}');
+    background-image: linear-gradient(to top, $s 0%, $e 100%);
+}
+
+/// boxShadow
+/// 
+/// @example
+///    @include box-shadow(
+///       0 0 5px 3px rgba(255, 0, 0, .6),
+///       0 0 5px 6px rgba(0, 182, 0, .6)
+///    );
+@mixin box-shadow($properties...) {
+    @include prefixer(box-shadow, $properties);
+}
+
+/// textShadow
+/// 
+/// @example
+///    @include text-shadow(
+///       1px 1px 0 rgba(255,255,255,1),
+///       1px 1px 2px rgba(0,85,0,.8)
+///    );
+@mixin text-shadow($properties...) {
+    @include prefixer(text-shadow, $properties);
+}

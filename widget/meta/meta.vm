@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<title>$!pageTitle - $!siteName</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link type="text/css" rel="stylesheet"
+      href="http://misc.360buyimg.com/jdf/1.0.0/unit/??ui-base/1.0.0/ui-base.css,shortcut/2.0.0/shortcut.css,global-header/1.0.0/global-header.css,myjd/2.0.0/myjd.css,nav/2.0.0/nav.css,shoppingcart/2.0.0/shoppingcart.css,global-footer/1.0.0/global-footer.css,service/1.0.0/service.css"/>
+<link rel="stylesheet" href="/static/common/css/base.scss">
+
+<script type="text/javascript">
+  window.pageConfig = {
+    compatible: true,
+    jdfVersion: '2.0.0'
+  }
+</script><!--ignore-->

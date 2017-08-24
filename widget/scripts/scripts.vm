@@ -1,0 +1,12 @@
+#framework("//misc.360buyimg.com/??jdf/lib/jquery-1.6.4.js,jdf/1.0.0/unit/base/1.0.0/base.js")
+#script()
+  seajs.config({base: "/"});
+  seajs.use('//misc.360buyimg.com/jdf/1.0.0/unit/globalInit/2.0.0/globalInit.js',function(globalInit){
+    globalInit();
+  });
+  //如果使用首页热搜词
+  seajs.use("//misc.360buyimg.com/jdf/1.0.0/unit/hotwords/1.0.0/hotwords",function(hotwords){
+    hotwords();
+  });
+#endscript
+#script("//wl.jd.com/wl.js")

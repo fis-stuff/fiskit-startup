@@ -1,0 +1,51 @@
+// 常用颜色
+$color-white: #fff !default;                 // 白色
+$color-blank: #333 !default;                 // 主文本颜色
+$color-gray: #666 !default;                  // 灰色
+$color-gray-light: #999 !default;            // 浅灰色
+$color-blue: #0275d8 !default;               // 蓝色主色
+$color-green: #a5de37 !default;              // 绿色
+$color-orange: #feae1b !default;             // 橙色
+$color-red: #ff4351 !default;                // 红色
+
+$color-mute: $color-gray-light;              // 次要色
+$color-primary: $color-blue !default;        // 主蓝色
+$color-success: $color-green !default;       // 成功色
+$color-info: $color-blue !default;           // 信息色
+$color-warn: $color-orange !default;         // 警告色
+$color-danger: $color-red !default;          // 危险、错误色
+
+// 链接颜色
+$link-color: $color-primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// font-size
+$font-size-base: 14px !default;
+
+// font-weight
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+$font-weight-base: $font-weight-normal !default;
+
+// font-family
+$font-family-yahei: '\5fae\8f6f\96c5\9ed1';
+$font-family-verdana: verdana;
+$font-family-songti: '\5B8B\4F53';
+$font-family-base: $font-family-yahei, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// line-height
+$line-height-base: 1.5 !default;
+
+// headings
+$headings-font-weight: normal !default;
+$headings-color: $color-blank !default;
+$headings-line-height: $line-height-base !default;
+
+$font-size-h1: 40px !default;
+$font-size-h2: 32px !default;
+$font-size-h3: 28px !default;
+$font-size-h4: 24px !default;
+$font-size-h5: 20px !default;
+$font-size-h6: $font-size-base !default;

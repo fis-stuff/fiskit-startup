@@ -1,0 +1,20 @@
+{
+  "name": "fiskit-startup",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "fk server start",
+    "dev": "fk release -wc",
+    "deploy": "fk release debug && fk release vm",
+    "lint": "eslint .",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint"
+  },
+  "keywords": [],
+  "author": "richard chen",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "husky": "^0.14.1"
+  }
+}

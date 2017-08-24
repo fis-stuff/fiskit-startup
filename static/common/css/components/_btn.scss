@@ -1,0 +1,46 @@
+%btn {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 15px;
+  border: 1px solid $color-gray-light;
+  cursor: pointer;
+  @include border-radius(4px);
+  &.disabled {
+    background: $color-gray-light;
+    cursor: not-allowed;
+    border-color: $color-gray-light;
+    color: $color-gray;
+  }
+  &:hover {
+    @include opacity(90);
+    text-decoration: none;
+  }
+  &:active {
+    @include opacity(95);
+  }
+}
+
+.btn-primary {
+  @extend %btn;
+  background: $color-primary;
+  color: #fff;
+  border-color: $color-primary;
+}
+.btn-default {
+  @extend %btn;
+  background: #fff;
+  border-color: $color-gray-light;
+}
+.btn-warn {
+  @extend %btn;
+  background: $color-warn;
+  border-color: $color-warn;
+  color: #fff;
+}
+.btn-error {
+  @extend %btn;
+  background: $color-danger;
+  border-color: $color-danger;
+  color: #fff;
+}

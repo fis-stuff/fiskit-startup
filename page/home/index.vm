@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+
+#set($pageTitle="首页")
+#parse("widget/meta/meta.vm")
+
+</head>
+<body>
+
+#set($pageNav="home")
+#parse("widget/header/header.vm")
+
+#parse("widget/home/home.vm")
+
+#parse("widget/footer/footer.vm")
+
+#parse("widget/scripts/scripts.vm")
+
+</body>
+</html>
