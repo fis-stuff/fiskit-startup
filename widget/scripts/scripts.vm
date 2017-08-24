@@ -1,6 +1,5 @@
 #framework("//misc.360buyimg.com/??jdf/lib/jquery-1.6.4.js,jdf/1.0.0/unit/base/1.0.0/base.js")
 #script()
-  seajs.config({base: "/"});
   seajs.use('//misc.360buyimg.com/jdf/1.0.0/unit/globalInit/2.0.0/globalInit.js',function(globalInit){
     globalInit();
   });
