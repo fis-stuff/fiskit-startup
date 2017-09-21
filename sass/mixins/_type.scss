@@ -1,7 +1,7 @@
 /// opacity
-///
+/// 
 /// @param {Number} $o - 不透明度，0-100
-///
+/// 
 /// @example
 ///     @include opacity(70);
 @mixin opacity($o: 70) {
@@ -10,7 +10,9 @@
     opacity: $o / 100;
 }
 
-/// 单行文本，超出显示...
+/// 文本超出显示...
+///
+/// @param {Number} $lines - 行数，默认为1
 ///
 /// @example
 ///    // scss
@@ -21,18 +23,28 @@
 ///      white-space: nowrap;
 ///      text-overflow: ellipsis;
 ///    }
-@mixin text-truncate() {
-    white-space: nowrap;
-    overflow:hidden;
-    text-overflow: ellipsis;
+@mixin text-truncate($lines: 1) {
+    @if $lines == 1 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    } @else {
+        display: -webkit-box;
+        display: box;
+        -webkit-line-clamp: $lines;
+        line-clamp: $lines;
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+        overflow: hidden;
+    }
 }
 
 /// 生成一个三角形
-///
+/// 
 /// @param {Number|String} $width - 边框宽度
 /// @param {String} $color - 边框颜色
 /// @param {String} $direction - 方向[down|left|up|right]
-///
+/// 
 /// @exampe
 ///    @include triangle(6px, #f0f, down);
 @mixin triangle($width, $color, $direction) {
