@@ -1,4 +1,5 @@
 module.exports = {
+  siteName: '异业合作',
   staticDomain: '',
   login: true
 }
