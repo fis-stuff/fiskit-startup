@@ -1,0 +1,1 @@
+require('/static/components/com1/index')

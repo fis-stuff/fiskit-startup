@@ -1,0 +1,1 @@
+console.log('data from components/com1/index.js')
