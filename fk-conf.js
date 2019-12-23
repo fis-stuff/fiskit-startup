@@ -26,7 +26,7 @@ var config = {
         }
     },
     // fis-parser-velocity 配置
-    // 具体参考：https://github.com/richard-chen-1985/fis-parser-velocity
+    // 具体参考：https://github.com/richardchen85/fis-parser-velocity
     velocity: {
         loader: 'seajs',
         macro: '/macro.vm',
